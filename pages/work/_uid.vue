@@ -82,9 +82,6 @@ export default {
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
-  mounted () {
-    console.log(this.doc.photos, 'slices')
-  },
   methods: {
     next () {
       if (this.visibleSlide >= this.slidesLen - 1) {

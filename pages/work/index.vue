@@ -32,9 +32,6 @@ export default {
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
-  },
-  mounted () {
-    console.log(this.albums, 'alb')
   }
 }
 </script>
