@@ -41,8 +41,9 @@ $breakpoint-tablet: 768px;
     }
     .paragraphe {
       a {
-        text-decoration: none;
         color: #000;
+        text-decoration: underline;
+        text-underline-position: under;
       }
     }
   }

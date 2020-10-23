@@ -47,7 +47,7 @@ $breakpoint-tablet: 768px;
     @media (max-width: $breakpoint-tablet) {
       margin-right: 0;
       width: 100%;
-      margin-left: 5%;
+      padding-left: 5%;
       margin-bottom: 10%;
     }
     a {

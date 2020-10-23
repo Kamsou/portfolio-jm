@@ -24,7 +24,7 @@ $breakpoint-tablet: 768px;
   display: block;
   font-size: 14px;
   @media (max-width: $breakpoint-tablet) {
-    margin-left: 5%;
+    padding: 5%;
   }
   p {
     a {
