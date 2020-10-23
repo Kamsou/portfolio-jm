@@ -100,14 +100,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$breakpoint-tablet: 768px;
 img {
   width: auto;
   height: 30vw;
+  @media (max-width: $breakpoint-tablet) {
+    width: 90vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 }
 .elements-carousel {
   display: flex;
   align-items: center;
   .element-number {
+    @media (max-width: $breakpoint-tablet) {
+      padding-left: 5%;
+    }
     span {
       display: block;
       font-size: 10px;
@@ -125,6 +135,10 @@ img {
       cursor: pointer;
       position: relative;
       left: 13%;
+      @media (max-width: $breakpoint-tablet) {
+        width: 8.389vw;
+        height: 8.278vw;
+      }
     }
   }
 }

@@ -12,7 +12,8 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
+$breakpoint-tablet: 768px;
 @font-face {
   font-family: 'Agipo';
   font-weight: 400;
@@ -39,6 +40,9 @@ html {
 
 body {
   padding: 30px 0 0 55px;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 30px 0 0 0;
+  }
 }
 
 *,

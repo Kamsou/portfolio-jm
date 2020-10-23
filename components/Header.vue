@@ -33,28 +33,41 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
+$breakpoint-tablet: 768px;
 header {
   font-size: 14px;
   display: flex;
   align-items: baseline;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 4vw;
+    padding-left: 5%;
+  }
   a {
     text-decoration: none;
     color: #222222;
     h1 {
       font-size: 14px;
       font-weight: normal;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 4vw;
+      }
     }
   }
   ul {
     display: flex;
     list-style: none;
+    align-items: center;
     li {
       a {
         text-decoration: none;
         color: #222222;
         .logo_instagram {
-          width: 10px;
-          height: 10px;
+          width: 13px;
+          height: 13px;
+          @media (max-width: $breakpoint-tablet) {
+            width: 3vw;
+            height: auto;
+          }
         }
       }
       a:hover {
@@ -68,6 +81,9 @@ header {
       content: '/';
       font-size: 15px;
       padding: 0 5px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 3vw;
+      }
     }
   }
 }

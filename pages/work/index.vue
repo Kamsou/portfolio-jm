@@ -33,17 +33,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$breakpoint-tablet: 768px;
 .page-album {
   display: flex;
   font-size: 0.9vw;
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+    font-size: 3.9vw;
+  }
   article {
     display: flex;
     margin-right: 80px;
+    @media (max-width: $breakpoint-tablet) {
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
     a {
       text-align: center;
       text-decoration: none;
+      @media (max-width: $breakpoint-tablet) {
+        text-align: inherit;
+      }
       .album-image {
         height: 15vw;
+        @media (max-width: $breakpoint-tablet) {
+          width: 80vw;
+          height: auto;
+        }
       }
       .album-title {
         display: block;
