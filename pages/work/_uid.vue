@@ -2,12 +2,12 @@
   <article>
     <carousel>
       <carousel-slide
-        v-for="(slide, index) in doc.photos"
+        v-for="(slide, index) in gallery"
         :key="index"
         :index="index"
         :visibleSlide="visibleSlide"
       >
-        <img @click="next()" :src="slide.image1.url" />
+        <img @click="next()" :src="slide.picture.url" />
         <div class="elements-carousel">
           <div class="element-number">
             <span>{{ index + 1 }} — {{ slidesLen }}</span>
@@ -66,19 +66,17 @@ export default {
   },
   computed: {
     slidesLen () {
-      return this.doc.photos.length
+      return this.gallery.length
     }
   },
   async asyncData ({ $prismic, params, error }) {
     try {
-      // Query to get post content
       const document = (await $prismic.api.getByUID('album', params.uid)).data
       return {
-        // Set slices as variable
-        doc: document
+        doc: document,
+        gallery: document.body[0].items
       }
     } catch (e) {
-      // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
   },

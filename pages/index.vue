@@ -1,64 +1,45 @@
 <template>
-  <div class="container">
-    <p>
-      • sept-nov 2020 <br>
-      Le trio de livres <br>
-      <span style="color: #800000; font-style: italic;">
-      -Caria, <br>
-      -Temps variable avec éclaircies, <br>
-      -Parfois, encore <br>
-      </span>
-      est exposé à <a href="http://www.biennale-photo-mulhouse.com/2020/exposition-bibliotheque">
-      la Biennale de la photographie de Mulhouse.</a><br>
-      "Comme des tourbillons de poussière" (par Pascal Amoyel)
-    </p>
+  <div class="page-article" v-if="articles.length !== 0">
+      <article class="article" v-for="a in articles" :key="a.id">
+        <img :src="a.data.image_de_l_article.url" class="album-image" alt="">
+        <prismic-rich-text class="paragraphe" :field="a.data.paragraphe_de_l_article"/>
+      </article>
   </div>
 </template>
 
 <script>
-export default {}
-</script>
-
-<style lang="scss">
-.container {
-  display: block;
-  font-size: 13px;
-  p {
-    font-family: monospace;
-    a {
-      color: #003300;
-      text-decoration: none;
+export default {
+  async asyncData ({ $prismic, error }) {
+    try {
+      const blogPosts = await $prismic.api.query(
+        $prismic.predicates.at('document.type', 'article'),
+        { orderings: '[document.first_publication_date]' }
+      )
+      return {
+        articles: blogPosts.results
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Page not found' })
     }
   }
 }
+</script>
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang="scss">
+.page-article {
+  article {
+    padding-bottom: 50px;
+    width: 600px;
+    img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .paragraphe {
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
 }
 </style>

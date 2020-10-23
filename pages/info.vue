@@ -23,10 +23,9 @@ export default {
   display: block;
   font-size: 14px;
   p {
-    font-family: serif;
     a {
-      color: #003300;
       text-decoration: none;
+      color: #000;
     }
   }
 }

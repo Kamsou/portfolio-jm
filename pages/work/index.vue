@@ -18,18 +18,14 @@ export default {
   },
   async asyncData ({ $prismic, error }) {
     try {
-      // Query to get posts content to preview
       const blogPosts = await $prismic.api.query(
         $prismic.predicates.at('document.type', 'album'),
         { orderings: '[document.first_publication_date]' }
       )
-
-      // Returns data to be used in template
       return {
         albums: blogPosts.results
       }
     } catch (e) {
-      // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
   }

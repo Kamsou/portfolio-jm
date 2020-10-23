@@ -13,19 +13,21 @@ export default {
 }
 </script>
 <style>
+@font-face {
+  font-family: 'Agipo';
+  font-weight: 400;
+  src: url('/fonts/agipo_regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Agipo Bold';
+  font-weight: bold;
+  src: url('/fonts/agipo_bold.woff') format('woff');
+}
 .content {
   padding: 30px 0 0 0;
 }
 html {
-  font-family:
-    serif,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Agipo';
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
