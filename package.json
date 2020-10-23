@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
+    "prismic-vue": "^2.0.1",
     "sass-loader": "^10.0.3"
   },
   "devDependencies": {
