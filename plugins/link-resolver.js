@@ -9,7 +9,7 @@ export default function (doc) {
   }
 
   if (doc.type === 'album') {
-    return `/work/${doc.uid}`
+    return '/work/' + doc.uid
   }
 
   return '/not-found'

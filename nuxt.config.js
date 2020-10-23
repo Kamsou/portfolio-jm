@@ -43,16 +43,28 @@ export default {
   prismic: {
     endpoint: 'https://jeanlemarques.cdn.prismic.io/api/v2',
     linkResolver: "@/plugins/link-resolver",
-    htmlSerializer: "@/plugins/html-serializer",
-    apiOptions: {
-      // example resolving documents with type `page` to `/:uid`
-      routes: [
-        {
-          type: 'album',
-          path: '/work/:uid'
-        }
-      ]
+    htmlSerializer: "@/plugins/html-serializer"
+  },
+
+  generate: {
+    routes: function() {
+      const homepage = initApi().then(api => {
+        return api
+          .query(Prismic.Predicates.at('document.type', 'album'))
+          .then(response => {
+            return response.results.map(payload => {
+              return {
+                route: `/work/${payload.uid}`,
+                payload
+              }
+            })
+          })
+      })
+      return Promise.all([homepage]).then(values => {
+        return [...values[0], ...values[1], ...values[2], ...values[3]]
+      })
     }
+    
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
