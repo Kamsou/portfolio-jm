@@ -104,7 +104,6 @@ $breakpoint-tablet: 768px;
 img {
   width: auto;
   height: 30vw;
-  pointer-events: none;
   @media (max-width: $breakpoint-tablet) {
     width: 90vw;
     height: auto;
