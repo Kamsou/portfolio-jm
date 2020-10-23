@@ -45,10 +45,14 @@ export default {
     linkResolver: "@/plugins/link-resolver",
     htmlSerializer: "@/plugins/html-serializer",
     preview: '/preview/',
-    linkResolver: function(doc) {
-      if (doc.type === 'album') {
-        return `/work/${doc.uid}`
-      }
+    apiOptions: {
+      // example resolving documents with type `page` to `/:uid`
+      routes: [
+        {
+          type: 'page',
+          path: '/:uid'
+        }
+      ]
     }
   },
 
