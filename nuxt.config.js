@@ -44,7 +44,12 @@ export default {
     endpoint: 'https://jeanlemarques.cdn.prismic.io/api/v2',
     linkResolver: "@/plugins/link-resolver",
     htmlSerializer: "@/plugins/html-serializer",
-    preview: '/preview/'
+    preview: '/preview/',
+    linkResolver: function(doc) {
+      if (doc.type === 'album') {
+        return `/work/${doc.uid}`
+      }
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
