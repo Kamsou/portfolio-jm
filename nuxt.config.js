@@ -44,13 +44,12 @@ export default {
     endpoint: 'https://jeanlemarques.cdn.prismic.io/api/v2',
     linkResolver: "@/plugins/link-resolver",
     htmlSerializer: "@/plugins/html-serializer",
-    preview: '/preview/',
     apiOptions: {
       // example resolving documents with type `page` to `/:uid`
       routes: [
         {
-          type: 'page',
-          path: '/:uid'
+          type: 'album',
+          path: '/work/:uid'
         }
       ]
     }
