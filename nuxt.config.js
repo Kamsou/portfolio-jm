@@ -45,6 +45,20 @@ export default {
     linkResolver: "@/plugins/link-resolver",
     htmlSerializer: "@/plugins/html-serializer",
     preview: false,
+    linkResolver ({ isBroken, type, uid }) {
+      if (isBroken) {
+        return '/not-found'
+      }
+
+      switch (type) {
+        case 'homepage':
+          return '/'
+        case 'album':
+          return '/work/' + uid
+        default:
+          return '/not-found'
+      }
+    },
   },
   generate: {
 		fallback: '404.html', // Netlify reads a 404.html, Nuxt will load as an SPA
