@@ -43,29 +43,12 @@ export default {
   prismic: {
     endpoint: 'https://jeanlemarques.cdn.prismic.io/api/v2',
     linkResolver: "@/plugins/link-resolver",
-    htmlSerializer: "@/plugins/html-serializer"
+    htmlSerializer: "@/plugins/html-serializer",
+    preview: false,
   },
-
   generate: {
-    routes: function() {
-      const homepage = initApi().then(api => {
-        return api
-          .query(Prismic.Predicates.at('document.type', 'album'))
-          .then(response => {
-            return response.results.map(payload => {
-              return {
-                route: `/work/${payload.uid}`,
-                payload
-              }
-            })
-          })
-      })
-      return Promise.all([homepage]).then(values => {
-        return [...values[0], ...values[1], ...values[2], ...values[3]]
-      })
-    }
-    
-  },
+		fallback: '404.html', // Netlify reads a 404.html, Nuxt will load as an SPA
+	},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
