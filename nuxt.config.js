@@ -43,7 +43,8 @@ export default {
   prismic: {
     endpoint: 'https://jeanlemarques.cdn.prismic.io/api/v2',
     linkResolver: "@/plugins/link-resolver",
-    htmlSerializer: "@/plugins/html-serializer"
+    htmlSerializer: "@/plugins/html-serializer",
+    preview: '/preview/'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

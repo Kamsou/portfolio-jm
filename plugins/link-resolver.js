@@ -8,12 +8,8 @@ export default function (doc) {
     return '/not-found'
   }
 
-  if (doc.type === 'blog_home') {
-    return '/'
-  }
-
   if (doc.type === 'album') {
-    return '/work/' + doc.uid
+    return `/work/${doc.uid}`
   }
 
   return '/not-found'
