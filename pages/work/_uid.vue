@@ -109,6 +109,7 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
+    touch-action: manipulation;
   }
 }
 .elements-carousel {
