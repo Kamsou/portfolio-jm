@@ -26,10 +26,15 @@ export default {
 </script>
 
 <style lang="scss">
+$breakpoint-tablet: 768px;
 .page-article {
   article {
     padding-bottom: 50px;
     width: 600px;
+    @media (max-width: $breakpoint-tablet) {
+      margin-left: 5%;
+      width: 95%;
+    }
     img {
       width: 100%;
       margin-bottom: 20px;

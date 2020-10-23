@@ -19,9 +19,13 @@ export default {
 </script>
 
 <style lang="scss">
+$breakpoint-tablet: 768px;
 .info {
   display: block;
   font-size: 14px;
+  @media (max-width: $breakpoint-tablet) {
+    margin-left: 5%;
+  }
   p {
     a {
       text-decoration: none;
