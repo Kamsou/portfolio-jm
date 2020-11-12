@@ -11,11 +11,6 @@
 
 <script>
 export default {
-  head () {
-    return {
-      title: 'Prismic Nuxt.js Multi Page Website'
-    }
-  },
   async asyncData ({ $prismic, error }) {
     try {
       const blogPosts = await $prismic.api.query(
@@ -27,6 +22,11 @@ export default {
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
+  head () {
+    return {
+      title: 'Jean Marquès'
     }
   }
 }

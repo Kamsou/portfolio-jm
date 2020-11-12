@@ -16,8 +16,8 @@ export default {
     }
   },
   head: {
-    title: 'Jean Marquès',
-  },
+    title: 'Jean Marquès'
+  }
 }
 </script>
 
