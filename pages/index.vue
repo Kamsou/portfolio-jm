@@ -21,7 +21,10 @@ export default {
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
     }
-  }
+  },
+  head: {
+    title: 'Jean Marquès',
+  },
 }
 </script>
 

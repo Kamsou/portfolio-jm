@@ -95,7 +95,10 @@ export default {
         this.visibleSlide--
       }
     }
-  }
+  },
+  head: {
+    title: 'Jean Marquès',
+  },
 }
 </script>
 
