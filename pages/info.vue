@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <prismic-rich-text :field="info.paragraphe"/>
+    <prismic-rich-text :field="info.paragraphe" />
   </div>
 </template>
 <script>
@@ -33,6 +33,11 @@ $breakpoint-tablet: 768px;
     a {
       text-decoration: none;
       color: #000;
+    }
+    img {
+      @media (max-width: $breakpoint-tablet) {
+        width: 100%;
+      }
     }
   }
 }

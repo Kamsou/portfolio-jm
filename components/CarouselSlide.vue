@@ -1,6 +1,6 @@
 <template>
   <div v-show="visibleSlide === index" class="carousel">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

@@ -16,12 +16,12 @@
       </li>
       <li>
         <nuxt-link to="/info">
-        info
+          info
         </nuxt-link>
       </li>
       <li>
         <a href="https://www.instagram.com/jeanmarques.jm/">
-          <img class="logo_instagram" src="@/static/instagram.png"/>
+          <img class="logo_instagram" src="@/static/instagram.png">
         </a>
       </li>
     </ul>

@@ -5,9 +5,9 @@
         v-for="(slide, index) in gallery"
         :key="index"
         :index="index"
-        :visibleSlide="visibleSlide"
+        :visible-slide="visibleSlide"
       >
-        <img @click="next()" :src="slide.picture.url" />
+        <img :src="slide.picture.url" @click="next()">
         <div class="elements-carousel">
           <div class="element-number">
             <span>{{ index + 1 }} — {{ slidesLen }}</span>
@@ -22,7 +22,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   points="45.63,75.8 0.375,38.087 45.63,0.375"
-                  />
+                />
               </svg>
             </a>
             <a class="next" @click="next()">
@@ -59,16 +59,6 @@ export default {
     Carousel,
     CarouselSlide
   },
-  data () {
-    return {
-      visibleSlide: 0
-    }
-  },
-  computed: {
-    slidesLen () {
-      return this.gallery.length
-    }
-  },
   async asyncData ({ $prismic, params, error }) {
     try {
       const document = (await $prismic.api.getByUID('album', params.uid)).data
@@ -78,6 +68,16 @@ export default {
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
+  data () {
+    return {
+      visibleSlide: 0
+    }
+  },
+  computed: {
+    slidesLen () {
+      return this.gallery.length
     }
   },
   methods: {
