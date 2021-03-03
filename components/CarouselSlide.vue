@@ -9,7 +9,3 @@ export default {
   props: ['visibleSlide', 'index']
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

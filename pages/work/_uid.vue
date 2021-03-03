@@ -7,7 +7,7 @@
         :index="index"
         :visible-slide="visibleSlide"
       >
-        <img :src="slide.picture.url" @click="next()">
+        <img :src="slide.picture.url + '&q=100'" @click="next()">
         <div class="elements-carousel">
           <div class="element-number">
             <span>{{ index + 1 }} — {{ slidesLen }}</span>
