@@ -1,7 +1,7 @@
 <template>
   <div v-if="articles.length !== 0" class="page-article">
     <article v-for="a in articles" :key="a.id" class="article">
-      <img :src="a.data.image_de_l_article.url" class="album-image" alt="">
+      <img :src="a.data.image_de_l_article.url + '&q=100'" class="album-image" alt="">
       <prismic-rich-text class="paragraphe" :field="a.data.paragraphe_de_l_article" />
     </article>
   </div>
