@@ -7,43 +7,48 @@
         :index="index"
         :visible-slide="visibleSlide"
       >
-        <img :src="slide.picture.url + '&q=100'" @click="next()">
-        <div class="elements-carousel">
-          <div class="element-number">
-            <span>{{ index + 1 }} — {{ slidesLen }}</span>
-          </div>
-          <div class="element-pagination">
-            <a class="prev" @click="prev()">
-              <svg width="20px" height="40px" viewBox="0 0 50 80" xml:space="preserve">
-                <polyline
-                  fill="none"
-                  stroke="#000000"
-                  stroke-width="1"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  points="45.63,75.8 0.375,38.087 45.63,0.375"
-                />
-              </svg>
-            </a>
-            <a class="next" @click="next()">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="20px"
-                height="40px"
-                viewBox="0 0 50 80"
-                xml:space="preserve"
-              >
-                <polyline
-                  fill="none"
-                  stroke="#000000"
-                  stroke-width="1"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  points="0.375,0.375 45.63,38.087 0.375,75.8"
-                />
-              </svg>
-            </a>
+        <div class="fit">
+          <img :src="slide.picture.url + '&q=100'" @click="next()">
+          <div class="elements-carousel">
+            <div class="pagination-left">
+              <div class="element-number">
+                <span>{{ index + 1 }} — {{ slidesLen }}</span>
+              </div>
+              <div class="element-pagination">
+                <a class="prev" @click="prev()">
+                  <svg width="20px" height="40px" viewBox="0 0 50 80" xml:space="preserve">
+                    <polyline
+                      fill="none"
+                      stroke="#000000"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      points="45.63,75.8 0.375,38.087 45.63,0.375"
+                    />
+                  </svg>
+                </a>
+                <a class="next" @click="next()">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="20px"
+                    height="40px"
+                    viewBox="0 0 50 80"
+                    xml:space="preserve"
+                  >
+                    <polyline
+                      fill="none"
+                      stroke="#000000"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      points="0.375,0.375 45.63,38.087 0.375,75.8"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <span class="title">{{ slide.picture.alt }}</span>
           </div>
         </div>
       </carousel-slide>
@@ -117,7 +122,9 @@ img {
 }
 .elements-carousel {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #222222;
   .element-number {
     @media (max-width: $breakpoint-tablet) {
       padding-left: 5%;
@@ -125,26 +132,40 @@ img {
     span {
       display: block;
       font-size: 10px;
-      margin-top: 20px;
+      margin-top: 12px;
       margin-left: 5px;
     }
   }
   .element-pagination {
     padding-left: 30px;
+    padding-top: 5px;
     .prev svg,
     .next svg {
-      width: 1.389vw;
+      width: 0.6vw;
       height: 1.278vw;
-      margin-top: 20px;
       cursor: pointer;
       position: relative;
       left: 13%;
+      top: 5px;
       @media (max-width: $breakpoint-tablet) {
         width: 8.389vw;
         height: 8.278vw;
       }
     }
   }
+}
+
+.title {
+  font-size: 12px;
+  padding-left: 20px;
+}
+
+.fit {
+  width: fit-content;
+}
+
+.pagination-left {
+  display: flex;
 }
 
 </style>

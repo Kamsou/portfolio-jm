@@ -3,7 +3,7 @@
     <article v-for="a in articles" :key="a.id" class="article">
       <img
         v-if="a.data.image_de_l_article.url"
-        :src="a.data.image_de_l_article.url + '&q=100'" 
+        :src="a.data.image_de_l_article.url + '&q=100'"
         class="album-image"
         alt=""
       >
