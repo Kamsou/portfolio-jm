@@ -85,20 +85,22 @@ export default {
       return this.gallery.length
     }
   },
+  mounted () {
+    window.addEventListener('keydown', this.next)
+    window.addEventListener('keydown', this.left)
+  },
+  beforeDestroy () {
+    window.removeEventListener('keydown', this.next)
+    window.addEventListener('keydown', this.left)
+  },
   methods: {
     next () {
-      if (this.visibleSlide >= this.slidesLen - 1) {
-        this.visibleSlide = 0
-      } else {
-        this.visibleSlide++
-      }
+      const max = this.visibleSlide >= this.slidesLen - 1
+      max ? this.visibleSlide = 0 : this.visibleSlide++
     },
     prev () {
-      if (this.visibleSlide <= 0) {
-        this.visibleSlide = this.slidesLen - 1
-      } else {
-        this.visibleSlide--
-      }
+      const min = this.visibleSlide = this.slidesLen - 1
+      min ? this.visibleSlide = this.slidesLen - 1 : this.visibleSlide--
     }
   },
   head: {
