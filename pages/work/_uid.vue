@@ -125,10 +125,10 @@ img {
   align-items: baseline;
   justify-content: space-between;
   color: #222222;
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 22px;
+  }
   .element-number {
-    @media (max-width: $breakpoint-tablet) {
-      padding-left: 5%;
-    }
     span {
       display: block;
       font-size: 10px;
@@ -139,6 +139,10 @@ img {
   .element-pagination {
     padding-left: 30px;
     padding-top: 5px;
+    @media (max-width: $breakpoint-tablet) {
+      padding-left: 9px;
+      padding-top: 0;
+    }
     .prev svg,
     .next svg {
       width: 0.6vw;
@@ -162,6 +166,10 @@ img {
 
 .fit {
   width: fit-content;
+  @media (max-width: $breakpoint-tablet) {
+    width: 90vw;
+    margin: 0 auto;
+  }
 }
 
 .pagination-left {
