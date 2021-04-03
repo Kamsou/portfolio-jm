@@ -15,7 +15,7 @@
                 <span>{{ index + 1 }} — {{ slidesLen }}</span>
               </div>
               <div class="element-pagination">
-                <a class="prev" @click="prev()">
+                <a class="prev" @click="prev">
                   <svg width="20px" height="40px" viewBox="0 0 50 80" xml:space="preserve">
                     <polyline
                       fill="none"
@@ -27,7 +27,7 @@
                     />
                   </svg>
                 </a>
-                <a class="next" @click="next()">
+                <a class="next" @click="next">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -94,13 +94,13 @@ export default {
     window.addEventListener('keydown', this.left)
   },
   methods: {
+    prev () {
+      const max = this.visibleSlide > 0
+      max ? this.visibleSlide-- : this.visibleSlide = this.slidesLen - 1
+    },
     next () {
       const max = this.visibleSlide >= this.slidesLen - 1
       max ? this.visibleSlide = 0 : this.visibleSlide++
-    },
-    prev () {
-      const min = this.visibleSlide = this.slidesLen - 1
-      min ? this.visibleSlide = this.slidesLen - 1 : this.visibleSlide--
     }
   },
   head: {
