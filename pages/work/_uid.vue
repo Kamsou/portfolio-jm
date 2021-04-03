@@ -15,7 +15,7 @@
                 <span>{{ index + 1 }} — {{ slidesLen }}</span>
               </div>
               <div class="element-pagination">
-                <a class="prev" @click="prev">
+                <a class="prev" @click="left">
                   <svg width="20px" height="40px" viewBox="0 0 50 80" xml:space="preserve">
                     <polyline
                       fill="none"
@@ -94,7 +94,7 @@ export default {
     window.addEventListener('keydown', this.left)
   },
   methods: {
-    prev () {
+    left () {
       const max = this.visibleSlide > 0
       max ? this.visibleSlide-- : this.visibleSlide = this.slidesLen - 1
     },
