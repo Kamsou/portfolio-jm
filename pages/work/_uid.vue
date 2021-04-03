@@ -86,14 +86,19 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('keydown', this.next)
-    window.addEventListener('keydown', this.left)
+    window.addEventListener('keydown', this.keycodeGallery)
   },
   beforeDestroy () {
-    window.removeEventListener('keydown', this.next)
-    window.addEventListener('keydown', this.left)
+    window.removeEventListener('keydown', this.keycodeGallery)
   },
   methods: {
+    keycodeGallery (event) {
+      if (event.keyCode === 39) {
+        this.next()
+      } else if (event.keyCode === 37) {
+        this.left()
+      }
+    },
     left () {
       const max = this.visibleSlide > 0
       max ? this.visibleSlide-- : this.visibleSlide = this.slidesLen - 1
