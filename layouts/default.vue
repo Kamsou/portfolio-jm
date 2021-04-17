@@ -15,20 +15,16 @@ export default {
 <style lang="scss">
 $breakpoint-tablet: 768px;
 @font-face {
-  font-family: 'Agipo';
+  font-family: 'Helvetica';
   font-weight: 400;
-  src: url('/fonts/agipo_regular.woff') format('woff');
-}
-@font-face {
-  font-family: 'Agipo Bold';
-  font-weight: bold;
-  src: url('/fonts/agipo_bold.woff') format('woff');
+  src: url('/fonts/helvetica-regular.woff2') format('woff2'),
+    url("/fonts/helvetica-regular.woff") format("woff");
 }
 .content {
   padding: 30px 0 0 0;
 }
 html {
-  font-family: 'Agipo';
+  font-family: 'Helvetica';
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
