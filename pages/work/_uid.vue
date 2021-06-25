@@ -12,7 +12,7 @@
           <div class="elements-carousel">
             <div class="pagination-left">
               <div class="element-number">
-                <span>{{ index + 1 }} — {{ slidesLen }}</span>
+                <span>{{ index + 1 }} - {{ slidesLen }}</span>
               </div>
               <div class="element-pagination">
                 <a class="prev" @click="left">
