@@ -2,7 +2,7 @@
   <div v-if="albums.length !== 0" class="page-album">
     <article v-for="a in albums" :key="a.id">
       <nuxt-link :to="`/work/${a.uid}`">
-        <img :src="a.data.image.url + '&q=100'" class="album-image" alt="">
+        <img :src="a.data.image.url + '&q=100&auto=enhance'" class="album-image" alt="">
         <span class="album-title">{{ a.data.title[0].text }}</span>
       </nuxt-link>
     </article>

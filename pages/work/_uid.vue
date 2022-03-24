@@ -8,7 +8,7 @@
         :visible-slide="visibleSlide"
       >
         <div class="fit">
-          <img :src="slide.picture.url + '&q=100'" @click="next()">
+          <img :src="slide.picture.url + '&q=100&auto=enhance'" @click="next()">
           <div class="elements-carousel">
             <div class="pagination-left">
               <div class="element-number">
