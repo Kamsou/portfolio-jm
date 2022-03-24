@@ -3,7 +3,7 @@
     <article v-for="a in articles" :key="a.id" class="article">
       <img
         v-if="a.data.image_de_l_article.url"
-        :src="a.data.image_de_l_article.url + '?auto=enhance,compress,format&q=100'"
+        :src="removeCompress(a.data.image_de_l_article.url)"
         class="album-image"
         alt=""
       >
@@ -25,6 +25,11 @@ export default {
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
+  methods: {
+    removeCompress (url) {
+      return url?.replace('?auto=compress,format', '?q=100') || ''
     }
   },
   head: {

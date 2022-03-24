@@ -8,7 +8,7 @@
         :visible-slide="visibleSlide"
       >
         <div class="fit">
-          <img :src="slide.picture.url + '&q=100&auto=enhance'" @click="next()">
+          <img :src="removeCompress(slide.picture.url)" @click="next()">
           <div class="elements-carousel">
             <div class="pagination-left">
               <div class="element-number">
@@ -83,6 +83,9 @@ export default {
   computed: {
     slidesLen () {
       return this.gallery.length
+    },
+    removeCompress (url) {
+      return url?.replace('?auto=compress,format', '?q=100') || ''
     }
   },
   mounted () {
