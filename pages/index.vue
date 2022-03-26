@@ -3,7 +3,7 @@
     <article v-for="a in articles" :key="a.id" class="article">
       <img
         v-if="a.data.image_de_l_article.url"
-        :src="removeCompress(a.data.image_de_l_article.url)"
+        :src="removeCompress(a.data.image_de_l_article)"
         class="album-image"
         alt=""
       >
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import * as prismicH from '@prismicio/helpers'
+
 export default {
   async asyncData ({ $prismic, error }) {
     try {
@@ -20,6 +22,7 @@ export default {
         $prismic.predicates.at('document.type', 'article'),
         { orderings: '[document.first_publication_date]' }
       )
+
       return {
         articles: blogPosts.results
       }
@@ -28,8 +31,8 @@ export default {
     }
   },
   methods: {
-    removeCompress (url) {
-      return url?.replace('?auto=compress,format', '?q=100') || ''
+    removeCompress (image) {
+      return prismicH.asImageSrc(image, { auto: undefined })
     }
   },
   head: {

@@ -2,7 +2,7 @@
   <div v-if="albums.length !== 0" class="page-album">
     <article v-for="a in albums" :key="a.id">
       <nuxt-link :to="`/work/${a.uid}`">
-        <img :src="removeCompress(a.data.image.url)" class="album-image" alt="">
+        <img :src="removeCompress(a.data.image)" class="album-image" alt="">
         <span class="album-title">{{ a.data.title[0].text }}</span>
       </nuxt-link>
     </article>
@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import * as prismicH from '@prismicio/helpers'
+
 export default {
   async asyncData ({ $prismic, error }) {
     try {
@@ -25,8 +27,8 @@ export default {
     }
   },
   methods: {
-    removeCompress (url) {
-      return url?.replace('?auto=compress,format', '?q=100') || ''
+    removeCompress (image) {
+      return prismicH.asImageSrc(image, { auto: undefined })
     }
   },
   head () {

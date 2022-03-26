@@ -8,7 +8,7 @@
         :visible-slide="visibleSlide"
       >
         <div class="fit">
-          <img :src="removeCompress(slide.picture.url)" @click="next()">
+          <img :src="removeCompress(slide.picture)" @click="next()">
           <div class="elements-carousel">
             <div class="pagination-left">
               <div class="element-number">
@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import * as prismicH from '@prismicio/helpers'
 import Carousel from '@/components/Carousel.vue'
 import CarouselSlide from '@/components/CarouselSlide.vue'
 export default {
@@ -84,8 +85,8 @@ export default {
     slidesLen () {
       return this.gallery.length
     },
-    removeCompress (url) {
-      return url?.replace('?auto=compress,format', '?q=100') || ''
+    removeCompress (image) {
+      return prismicH.asImageSrc(image, { auto: undefined })
     }
   },
   mounted () {

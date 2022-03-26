@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.4",
     "@nuxtjs/stylelint-module": "^4.0.0",
+    "@prismicio/helpers": "^2.2.1",
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
