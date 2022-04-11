@@ -37,26 +37,28 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    "@nuxtjs/prismic",
+    '@nuxtjs/prismic'
   ],
 
   prismic: {
     endpoint: 'https://jeanlemarques.cdn.prismic.io/api/v2',
-    linkResolver: "@/plugins/link-resolver",
-    htmlSerializer: "@/plugins/html-serializer",
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
     preview: false,
+    modern: true
   },
   generate: {
-		fallback: '404.html', // Netlify reads a 404.html, Nuxt will load as an SPA
-	},
+    fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      config.resolve.alias["vue"] = "vue/dist/vue.common";
-    }
+    extend (config, ctx) {
+      config.resolve.alias.vue = 'vue/dist/vue.common'
+    },
+    transpile: ['@prismicio/vue', 'vue-slicezone']
   }
 }

@@ -84,9 +84,6 @@ export default {
   computed: {
     slidesLen () {
       return this.gallery.length
-    },
-    removeCompress (image) {
-      return prismicH.asImageSrc(image, { auto: undefined })
     }
   },
   mounted () {
@@ -110,6 +107,9 @@ export default {
     next () {
       const max = this.visibleSlide >= this.slidesLen - 1
       max ? this.visibleSlide = 0 : this.visibleSlide++
+    },
+    removeCompress (image) {
+      return prismicH.asImageSrc(image, { auto: undefined })
     }
   },
   head: {

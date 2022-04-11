@@ -1,0 +1,75 @@
+{
+  "slices": {
+    "components": {
+      "image_section": {
+        "library": "slices",
+        "id": "image_section",
+        "name": "ImageSection",
+        "description": "ImageSection",
+        "model": {
+          "id": "image_section",
+          "type": "SharedSlice",
+          "name": "ImageSection",
+          "description": "ImageSection",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ImageSection",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your product"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "image_section",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Brand cross-platform infrastructures",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Eu cupidatat qui ut sint non ut dolor aute reprehenderit ipsum irure ea. Adipisicing reprehenderit eu enim pariatur ullamco veniam aliqua aute enim ut ut laborum laboris.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "isDirectory": true,
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

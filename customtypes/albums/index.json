@@ -1,0 +1,10 @@
+{
+  "id": "albums",
+  "label": "Albums",
+  "repeatable": true,
+  "json": {
+    "Main": {}
+  },
+  "hash": "6587ba210d14b539977f8bcffb689081",
+  "status": false
+}

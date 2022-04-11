@@ -1,0 +1,24 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "image_section",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Brand cross-platform infrastructures",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Eu cupidatat qui ut sint non ut dolor aute reprehenderit ipsum irure ea. Adipisicing reprehenderit eu enim pariatur ullamco veniam aliqua aute enim ut ut laborum laboris.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

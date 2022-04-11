@@ -1,0 +1,26 @@
+{
+  "id": "article",
+  "label": "Article",
+  "repeatable": true,
+  "json": {
+    "Main": {
+      "image_de_l_article": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Image de l'article"
+        }
+      },
+      "paragraphe_de_l_article": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "label": "Paragraphe de l'article"
+        }
+      }
+    }
+  },
+  "hash": "c1767d8463324b97624ec1eeea80f866",
+  "status": true
+}

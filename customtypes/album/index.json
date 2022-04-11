@@ -1,0 +1,71 @@
+{
+  "id": "album",
+  "label": "Album",
+  "repeatable": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading2",
+          "label": "Title",
+          "placeholder": "Mon nouvel album"
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug"
+        }
+      },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date"
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "Photo de couverture"
+        }
+      },
+      "body": {
+        "type": "Slices",
+        "fieldset": "Slice zone",
+        "config": {
+          "labels": {
+            "image_gallery": []
+          },
+          "choices": {
+            "image_gallery": {
+              "type": "Slice",
+              "fieldset": "Image Gallery",
+              "description": "Image Gallery with a title and a caption for each image",
+              "icon": "add_a_photo",
+              "non-repeat": {},
+              "repeat": {
+                "picture": {
+                  "type": "Image",
+                  "config": {
+                    "constraint": {
+                      "width": null,
+                      "height": null
+                    },
+                    "thumbnails": [],
+                    "label": "Image"
+                  }
+                }
+              },
+              "display": "grid"
+            }
+          }
+        }
+      }
+    }
+  },
+  "hash": "a3db93af79e19a0d2156db7cb8ae0dba",
+  "status": true
+}

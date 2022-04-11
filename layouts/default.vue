@@ -17,8 +17,8 @@ $breakpoint-tablet: 768px;
 @font-face {
   font-family: 'Helvetica';
   font-weight: 400;
-  src: url('/fonts/helvetica-regular.woff2') format('woff2'),
-    url("/fonts/helvetica-regular.woff") format("woff");
+  src: url('../static/fonts/helvetica-regular.woff') format('woff'),
+    url("../static/fonts/helvetica-regular.woff2") format("woff2");
 }
 .content {
   padding: 30px 0 0 0;
