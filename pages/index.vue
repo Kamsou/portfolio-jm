@@ -46,10 +46,10 @@ $breakpoint-tablet: 768px;
 .page-article {
   article {
     padding-bottom: 50px;
-    width: 600px;
+    width: 500px;
     @media (max-width: $breakpoint-tablet) {
-      margin-left: 5%;
       width: 95%;
+      margin: 0 auto;
     }
     img {
       width: 100%;

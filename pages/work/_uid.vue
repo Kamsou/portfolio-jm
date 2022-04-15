@@ -136,6 +136,7 @@ img {
   align-items: baseline;
   justify-content: space-between;
   color: #222222;
+
   @media (max-width: $breakpoint-tablet) {
     padding-top: 22px;
   }
@@ -173,10 +174,16 @@ img {
 .title {
   font-size: 12px;
   padding-left: 20px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 60%;
+    padding-left: 0;
+  }
 }
 
 .fit {
   width: fit-content;
+
   @media (max-width: $breakpoint-tablet) {
     width: 90vw;
     margin: 0 auto;
@@ -185,6 +192,10 @@ img {
 
 .pagination-left {
   display: flex;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 40%;
+  }
 }
 
 </style>
