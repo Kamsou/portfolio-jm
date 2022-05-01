@@ -14,6 +14,7 @@
               <div class="element-number">
                 <span>{{ index + 1 }} - {{ slidesLen }}</span>
               </div>
+
               <div class="element-pagination">
                 <a class="prev" @click="left">
                   <svg width="20px" height="40px" viewBox="0 0 50 80" xml:space="preserve">
@@ -27,6 +28,7 @@
                     />
                   </svg>
                 </a>
+
                 <a class="next" @click="next">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +50,7 @@
                 </a>
               </div>
             </div>
+
             <span class="title">{{ slide.picture.alt }}</span>
           </div>
         </div>
@@ -172,7 +175,7 @@ img {
 }
 
 .title {
-  font-size: 12px;
+  font-size: 13px;
   padding-left: 20px;
 
   @media (max-width: $breakpoint-tablet) {

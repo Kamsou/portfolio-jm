@@ -18,9 +18,9 @@
     "@prismicio/helpers": "^2.2.1",
     "@prismicio/slice-simulator-vue": "^0.2.0",
     "core-js": "^3.6.5",
-    "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
     "prismic-vue": "^2.0.1",
+    "sass": "^1.51.0",
     "sass-loader": "^10.0.3",
     "vue-slicezone": "^0.1.4"
   },

@@ -9,7 +9,7 @@
           :alt="item.primary.image.alt"
         >
 
-        <prismic-rich-text :field="item.primary.label" />
+        <prismic-rich-text class="imageDescriptionText" :field="item.primary.label" />
       </div>
 
       <div v-else class="imageSlider">
@@ -24,7 +24,7 @@
               <img class="imageCarousel" :src="removeCompress(block.image)" :alt="block.image.alt">
 
               <div class="elements-carousel">
-                <prismic-rich-text :field="block.title" />
+                <prismic-rich-text class="carouselTitle" :field="block.title" />
               </div>
             </div>
           </carousel-slide>
@@ -86,21 +86,40 @@ export default {
 <style lang="scss">
 $breakpoint-tablet: 768px;
 .image {
-  width: 500px;
+  width: 40vw;
 
   @media (max-width: $breakpoint-tablet) {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
 }
 
 .imageCarousel {
-  max-width: 500px;
+  width: 40vw;
 
   @media (max-width: $breakpoint-tablet) {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     touch-action: manipulation;
+  }
+}
+
+.imageDescription {
+  width: 40vw;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    margin: 0 auto;
+    touch-action: manipulation;
+  }
+}
+
+.imageDescriptionText {
+  text-align: right;
+  font-size: 13px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
   }
 }
 
@@ -117,7 +136,7 @@ $breakpoint-tablet: 768px;
 .elements-carousel {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: flex-end;
   color: #222222;
 
   .element-number {
@@ -149,6 +168,10 @@ $breakpoint-tablet: 768px;
       }
     }
   }
+}
+
+.carouselTitle {
+  font-size: 13px;
 }
 
 .title {
