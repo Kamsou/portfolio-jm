@@ -30,18 +30,15 @@
     </div>
   </section>
 </template>
-
 <script>
 import * as prismicH from '@prismicio/helpers'
 import CarouselItem from '../components/CarouselItem.vue'
 
 export default {
-  components: {
-    CarouselItem
-  },
+  components: { CarouselItem },
   async asyncData ({ $prismic, error }) {
     try {
-      const page = (await $prismic.api.getSingle('main_menu')).data.body
+      const page = (await $prismic.api.getSingle('test')).data.body
       return {
         page
       }
@@ -94,16 +91,6 @@ $breakpoint-tablet: 768px;
   }
 }
 
-.imageCarousel {
-  width: 40vw;
-
-  @media (max-width: $breakpoint-tablet) {
-    width: 100%;
-    margin: 0 auto;
-    touch-action: manipulation;
-  }
-}
-
 .imageDescription {
   width: 40vw;
 
@@ -133,47 +120,6 @@ $breakpoint-tablet: 768px;
   }
 }
 
-.elements-carousel {
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-end;
-  color: #222222;
-
-  .element-number {
-    span {
-      display: block;
-      font-size: 10px;
-      margin-top: 12px;
-      margin-left: 5px;
-    }
-  }
-  .element-pagination {
-    padding-left: 30px;
-    padding-top: 5px;
-    @media (max-width: $breakpoint-tablet) {
-      padding-left: 9px;
-      padding-top: 0;
-    }
-    .prev svg,
-    .next svg {
-      width: 0.6vw;
-      height: 1.278vw;
-      cursor: pointer;
-      position: relative;
-      left: 13%;
-      top: 5px;
-      @media (max-width: $breakpoint-tablet) {
-        width: 8.389vw;
-        height: 8.278vw;
-      }
-    }
-  }
-}
-
-.carouselTitle {
-  font-size: 13px;
-}
-
 .title {
   font-size: 16px;
 
@@ -193,14 +139,6 @@ $breakpoint-tablet: 768px;
   @media (max-width: $breakpoint-tablet) {
     width: 90vw;
     margin: 0 auto;
-  }
-}
-
-.pagination-left {
-  display: flex;
-
-  @media (max-width: $breakpoint-tablet) {
-    width: 40%;
   }
 }
 </style>
