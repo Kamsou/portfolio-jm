@@ -43,10 +43,9 @@ export default {
 $breakpoint-tablet: 768px;
 .page-album {
   display: flex;
-  font-size: 0.9vw;
+  font-size: 13px;
   @media (max-width: $breakpoint-tablet) {
     display: block;
-    font-size: 3.9vw;
   }
   article {
     display: flex;
