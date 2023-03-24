@@ -43,6 +43,7 @@ header {
     padding-left: 5%;
   }
   a {
+    display: inline-flex;
     text-decoration: none;
     color: #222222;
     h1 {
