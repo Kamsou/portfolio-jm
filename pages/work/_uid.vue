@@ -125,7 +125,7 @@ export default {
 $breakpoint-tablet: 768px;
 img {
   width: auto;
-  height: 30vw;
+  height: 40vw;
   @media (max-width: $breakpoint-tablet) {
     width: 90vw;
     height: auto;

@@ -63,7 +63,7 @@ $breakpoint-tablet: 768px;
         text-align: inherit;
       }
       .album-image {
-        height: 15vw;
+        height: 30vw;
         @media (max-width: $breakpoint-tablet) {
           width: 80vw;
           height: auto;
