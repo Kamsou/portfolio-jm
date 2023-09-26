@@ -138,33 +138,47 @@ $breakpoint-tablet: 768px;
   align-items: baseline;
   justify-content: flex-end;
   color: #222222;
+  margin-top: 15px;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 0px;
+  }
 
   .element-number {
     span {
       display: block;
       font-size: 10px;
-      margin-top: 12px;
       margin-left: 5px;
     }
   }
   .element-pagination {
     padding-left: 30px;
-    padding-top: 5px;
+    display: flex;
+    gap: 15px;
+
     @media (max-width: $breakpoint-tablet) {
-      padding-left: 9px;
-      padding-top: 0;
+      gap: 0px;
+      width: 90px;
     }
-    .prev svg,
-    .next svg {
+
+    .prev,
+    .next {
       width: 0.6vw;
       height: 1.278vw;
       cursor: pointer;
-      position: relative;
-      left: 13%;
-      top: 5px;
+      display: flex;
+      align-items: center;
+
       @media (max-width: $breakpoint-tablet) {
         width: 8.389vw;
         height: 8.278vw;
+
+        p {
+          font-size: 20px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
@@ -198,6 +212,7 @@ $breakpoint-tablet: 768px;
 
 .pagination-left {
   display: flex;
+  align-items: center;
 
   @media (max-width: $breakpoint-tablet) {
     width: 40%;

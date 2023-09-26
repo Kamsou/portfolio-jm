@@ -17,36 +17,11 @@
 
               <div class="element-pagination">
                 <a class="prev" @click="left">
-                  <svg width="20px" height="40px" viewBox="0 0 50 80" xml:space="preserve">
-                    <polyline
-                      fill="none"
-                      stroke="#000000"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      points="45.63,75.8 0.375,38.087 45.63,0.375"
-                    />
-                  </svg>
+                  <p>&lt;</p>
                 </a>
 
                 <a class="next" @click="next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    width="20px"
-                    height="40px"
-                    viewBox="0 0 50 80"
-                    xml:space="preserve"
-                  >
-                    <polyline
-                      fill="none"
-                      stroke="#000000"
-                      stroke-width="1"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      points="0.375,0.375 45.63,38.087 0.375,75.8"
-                    />
-                  </svg>
+                  <p>></p>
                 </a>
               </div>
             </div>
@@ -139,36 +114,46 @@ img {
   align-items: baseline;
   justify-content: space-between;
   color: #222222;
+  margin-top: 15px;
 
   @media (max-width: $breakpoint-tablet) {
-    padding-top: 22px;
+    margin-top: 22px;
   }
   .element-number {
     span {
       display: block;
       font-size: 10px;
-      margin-top: 12px;
       margin-left: 5px;
     }
   }
   .element-pagination {
     padding-left: 30px;
-    padding-top: 5px;
+    display: flex;
+    gap: 15px;
+
     @media (max-width: $breakpoint-tablet) {
-      padding-left: 9px;
-      padding-top: 0;
+      gap: 0px;
+      width: 90px;
     }
-    .prev svg,
-    .next svg {
+
+    .prev
+    .next {
       width: 0.6vw;
       height: 1.278vw;
       cursor: pointer;
-      position: relative;
-      left: 13%;
-      top: 5px;
+      display: flex;
+      align-items: center;
+
       @media (max-width: $breakpoint-tablet) {
         width: 8.389vw;
         height: 8.278vw;
+
+        p {
+          font-size: 20px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
@@ -195,6 +180,7 @@ img {
 
 .pagination-left {
   display: flex;
+  align-items: center;
 
   @media (max-width: $breakpoint-tablet) {
     width: 40%;
