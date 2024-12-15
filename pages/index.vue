@@ -133,57 +133,6 @@ $breakpoint-tablet: 768px;
   }
 }
 
-.elements-carousel {
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-end;
-  color: #222222;
-  margin-top: 15px;
-
-  @media (max-width: $breakpoint-tablet) {
-    margin-top: 0px;
-  }
-
-  .element-number {
-    span {
-      display: block;
-      font-size: 10px;
-      margin-left: 5px;
-    }
-  }
-  .element-pagination {
-    padding-left: 30px;
-    display: flex;
-    gap: 15px;
-
-    @media (max-width: $breakpoint-tablet) {
-      gap: 0px;
-      width: 90px;
-    }
-
-    .prev,
-    .next {
-      width: 0.6vw;
-      height: 1.278vw;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-
-      @media (max-width: $breakpoint-tablet) {
-        width: 8.389vw;
-        height: 8.278vw;
-
-        p {
-          font-size: 20px;
-          height: 100%;
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
-  }
-}
-
 .carouselTitle {
   font-size: 13px;
 }

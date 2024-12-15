@@ -8,7 +8,9 @@
         :visible-slide="visibleSlide"
       >
         <div class="fit">
-          <img :src="removeCompress(slide.picture)" @click="next()">
+          <img :src="removeCompress(slide.picture)">
+          <div class="clickable-area left" @click="left" />
+          <div class="clickable-area right" @click="next" />
           <div class="elements-carousel">
             <div class="pagination-left">
               <div class="element-number">
@@ -97,13 +99,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fit {
+  position: relative;
+}
+
+.clickable-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  cursor: pointer;
+}
+
+.clickable-area.left {
+  left: 0;
+}
+
+.clickable-area.right {
+  right: 0;
+}
+
 $breakpoint-tablet: 768px;
 img {
   width: auto;
   height: 40vw;
   @media (max-width: $breakpoint-tablet) {
-    width: 90vw;
-    height: auto;
+    height: 70vw;
     display: block;
     margin: 0 auto;
     touch-action: manipulation;
@@ -130,9 +151,10 @@ img {
     padding-left: 30px;
     display: flex;
     gap: 15px;
+    font-size: 10px;
 
     @media (max-width: $breakpoint-tablet) {
-      gap: 0px;
+      padding-left: 15px;
       width: 90px;
     }
 

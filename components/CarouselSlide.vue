@@ -6,6 +6,15 @@
 
 <script>
 export default {
-  props: ['visibleSlide', 'index']
+  props: {
+    visibleSlide: {
+      type: Number,
+      required: true
+    },
+    index: {
+      type: Number,
+      required: true
+    }
+  }
 }
 </script>

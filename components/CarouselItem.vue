@@ -81,6 +81,7 @@ $breakpoint-tablet: 768px;
     padding-left: 30px;
     display: flex;
     gap: 15px;
+    font-size: 10px;
 
     @media (max-width: $breakpoint-tablet) {
       gap: 0px;
